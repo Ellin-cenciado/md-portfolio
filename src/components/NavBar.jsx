@@ -16,7 +16,6 @@ function NavBar() {
         <SideBarIcon
           icon={<HiMiniCodeBracketSquare size="28"  />} render = 'examples' text="Examples"
         />
-        <hr />
         <SideBarSocial
           icon={<PiGithubLogoFill size="28" />}
           text="Github"

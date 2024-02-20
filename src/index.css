@@ -4,11 +4,13 @@
 
 * {
   font-family: "Open Sans";
+  min-width: 0;
 }
 body {
   background-color: #4c594f;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  min-height: 100%;
 }
 
 @keyframes fadeInAnimation {
@@ -26,6 +28,9 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+html {
+  height: 100%;
+}
 
 .personal-card {
   animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 2s;
@@ -42,17 +47,26 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-hr {
-  height: 1px;
-  background: radial-gradient(
-    circle,
-    rgba(76, 89, 79, 1) 0%,
-    rgba(35, 38, 37, 1) 75%
-  );
-  border: none;
-}
 
+@media screen and (aspect-ratio < 1/1) {
+  .navBar {
+    @apply relative top-[-7rem] left-[-4rem] rounded-t-3xl h-screen w-screen flex flex-row justify-evenly
+  }
+  .personal-card{
+    @apply relative top-[-7rem] left-[-3rem]
+  }
+  .my-name-cyan {
+    @apply relative top-[-2.7rem] left-[-16rem]
+  }
+  .my-name-red {
+    @apply relative top-[-7.3rem] left-[-16.3rem] 
+  }
+  .role-description{
+    @apply relative top-[-1.5rem] left-[-26rem];
+  }
+}
 @layer components {
+  
   .navBar {
     @apply fixed top-0 left-0 h-screen w-28 m-0 flex flex-col justify-evenly bg-forest-500
     text-white rounded-r-3xl shadow-md;
@@ -70,10 +84,10 @@ hr {
   .personal-card {
     @apply absolute text-forest-100 top-48 left-48 text-7xl font-bold drop-shadow-xl;
   }
-  .about-card{
+  .about-card {
     @apply absolute text-forest-100 top-48 left-48 text-7xl font-bold drop-shadow-xl;
   }
-  .examples-card{
+  .examples-card {
     @apply absolute text-forest-100 top-48 left-48 text-7xl font-bold drop-shadow-xl;
   }
   .my-name-cyan {
@@ -82,7 +96,10 @@ hr {
   .my-name-red {
     @apply absolute left-81 top-65 text-red-400 opacity-100 mix-blend-screen;
   }
-  .clicked{
-    @apply absolute h-screen w-screen hover:bg-forest-500 bg-forest-500 z-50
+  .clicked {
+    @apply absolute h-screen w-screen hover:bg-forest-500 bg-forest-500 z-50;
+  }
+  .role-description{
+    @apply absolute text-forest-100 top-82 left-50 text-xl font-semibold opacity-75 ;
   }
 }

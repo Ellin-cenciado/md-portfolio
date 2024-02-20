@@ -4,13 +4,15 @@ import {NavBarContext} from '../context/NavBarContext'
 //gets homeClassName from NavBarContext
 
 function PersonalCard() {
-  const homeClassName = useContext(NavBarContext);
+  const homeClassName = useContext(NavBarContext).homeClassName;
   return (
-    <div className={homeClassName.homeClassName}>
+    <div className={homeClassName}>
       <h1 className="personal-card">Greetings!<br/>I&apos;m</h1>
-      <h1 className="personal-card my-name-cyan">Javier</h1>
-      <h1 className="personal-card my-name-red">Javier</h1>
-      <h2 className="absolute text-forest-100 top-82 left-50 text-xl font-semibold opacity-75">Frontend developer</h2>
+      <div className='max-w-0'>
+        <h1 className="personal-card my-name-cyan">Javier</h1>
+        <h1 className="personal-card my-name-red">Javier</h1>
+      </div>
+      <h2 className="role-description">Frontend developer</h2>
     </div>
   );
 }

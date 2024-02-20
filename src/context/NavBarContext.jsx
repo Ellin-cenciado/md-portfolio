@@ -6,9 +6,8 @@ export const NavBarContext = createContext();
 //This controls which page is being currently shown
 
 export function NavBarContextProvider(props) {
-
-    //Sets current page to home, it works by addind the 'hidden' class to every page but the page currently
-    //being rendered on
+  //Sets current page to home, it works by addind the 'hidden' class to every page but the page currently
+  //being rendered on
 
   const [currentPage, setCurrentPage] = useState("home");
   const [homeClassName, setHomeClassName] = useState(
@@ -21,30 +20,35 @@ export function NavBarContextProvider(props) {
     "flex items-center h-screen w-screen select-none hidden"
   );
 
-    //adds or removes the 'hidden tag depending on which page u r in'
+  //adds or removes the 'hidden tag depending on which page u r in'
 
   function UpdatePage(page) {
+    //Hides all pages before showing the selected one
+    setHomeClassName("flex items-center h-screen w-screen select-none hidden");
+    setAboutClassName("flex items-center h-screen w-screen select-none hidden");
+    setExamplesClassName(
+      "flex items-center h-screen w-screen select-none hidden"
+    );
+
     setCurrentPage(page);
     switch (page) {
-        case "home":
-            console.log('Switched to home!!');
-            setHomeClassName("flex items-center h-screen w-screen select-none");
-            setAboutClassName("flex items-center h-screen w-screen select-none hidden");
-            setExamplesClassName("flex items-center h-screen w-screen select-none hidden");
-        break;
-        case 'about':
-            console.log('Switched to about!!');
+      case "home":
+        console.log("Switched to home!!");
 
-            setHomeClassName("flex items-center h-screen w-screen select-none hidden");
-            setAboutClassName("flex items-center h-screen w-screen select-none ");
-            setExamplesClassName("flex items-center h-screen w-screen select-none hidden");
-        break;
-        case 'examples':
-            console.log('Switched to examples!!');
+        setHomeClassName("flex items-center h-screen w-screen select-none");
 
-            setHomeClassName("flex items-center h-screen w-screen select-none hidden");
-            setAboutClassName("flex items-center h-screen w-screen select-none hidden");
-            setExamplesClassName("flex items-center h-screen w-screen select-none ");
+        break;
+      case "about":
+        console.log("Switched to about!!");
+
+        setAboutClassName("flex items-center h-screen w-screen select-none ");
+        break;
+      case "examples":
+        console.log("Switched to examples!!");
+
+        setExamplesClassName(
+          "flex items-center h-screen w-screen select-none "
+        );
         break;
     }
   }
