@@ -26,12 +26,11 @@ body {
 .navBar {
   animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 1s;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; 
 }
 html {
   height: 100%;
 }
-
 .personal-card {
   animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 2s;
   animation-iteration-count: 1;
@@ -50,7 +49,7 @@ html {
 
 @media screen and (aspect-ratio < 1/1) {
   .navBar {
-    @apply relative top-[-7rem] left-[-4rem] rounded-t-3xl h-screen w-screen flex flex-row justify-evenly
+    @apply relative top-[-20vh] left-[-4rem] rounded-t-3xl size-5 h-screen w-screen flex flex-row justify-evenly
   }
   .personal-card{
     @apply relative top-[-7rem] left-[-3rem]
@@ -64,16 +63,25 @@ html {
   .role-description{
     @apply relative top-[-1.5rem] left-[-26rem];
   }
+/*   .clicked{
+    position: relative;
+    top: -80%;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+  }important  FIX ANIMATION ON MOBILE HOLY FUCK*/
+  .sidebar-icon{
+    @apply relative min-w-max h-[12%] mx-[0%] my-[3%]
+  }
 }
 @layer components {
-  
   .navBar {
-    @apply fixed top-0 left-0 h-screen w-28 m-0 flex flex-col justify-evenly bg-forest-500
+    @apply fixed top-0 left-0 h-screen w-[10%] m-0 flex flex-col justify-evenly bg-forest-500
     text-white rounded-r-3xl shadow-md;
   }
   .sidebar-icon {
-    @apply relative flex items-center justify-center rounded-4xl h-24
-        w-24 my-2  mx-1 shadow-lg bg-forest-400
+    @apply relative flex items-center justify-center rounded-[12rem] h-[15%]
+        w-[85%] my-[5%]  mx-[5%] shadow-lg bg-forest-400
         text-forest-100 transition-all ease-out hover:bg-forest-300  hover:rounded-3xl
         hover:cursor-pointer;
   }
@@ -82,24 +90,24 @@ html {
      transition-all ease-out duration-500 bg-forest-500 opacity-0 select-none cursor-default scale-0 z-10;
   }
   .personal-card {
-    @apply absolute text-forest-100 top-48 left-48 text-7xl font-bold drop-shadow-xl;
+    @apply relative text-forest-100 left-24 text-7xl font-bold drop-shadow-xl;
   }
   .about-card {
-    @apply absolute text-forest-100 top-48 left-48 text-7xl font-bold drop-shadow-xl;
+    @apply relative text-forest-100 left-24 bottom-24 text-7xl font-bold drop-shadow-xl;
   }
   .examples-card {
     @apply absolute text-forest-100 top-48 left-48 text-7xl font-bold drop-shadow-xl;
   }
   .my-name-cyan {
-    @apply absolute left-80 top-64 text-cyan-400 opacity-100 mix-blend-screen;
+    @apply relative bottom-[-4.6rem] left-[-8rem] text-cyan-400 opacity-100 mix-blend-screen;
   }
   .my-name-red {
-    @apply absolute left-81 top-65 text-red-400 opacity-100 mix-blend-screen;
+    @apply relative left-[-7.8rem] text-red-400 opacity-100 mix-blend-screen;
   }
   .clicked {
     @apply absolute h-screen w-screen hover:bg-forest-500 bg-forest-500 z-50;
   }
   .role-description{
-    @apply absolute text-forest-100 top-82 left-50 text-xl font-semibold opacity-75 ;
+    @apply relative text-forest-100 right-[16.7rem] top-[5.8rem] text-xl font-semibold opacity-75 ;
   }
 }

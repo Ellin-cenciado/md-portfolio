@@ -6,9 +6,9 @@ import {Description} from './AboutDescription'
 //I have to remove personal-card className and start stylizing this
 
 function About() {
-    const aboutClassName = useContext(NavBarContext);
+    const aboutClassName = useContext(NavBarContext).aboutClassName;
     return (
-      <div className={aboutClassName.aboutClassName}>
+      <div className={aboutClassName}>
         <h1 className="about-card">About Me<br/></h1>
         <Description/>
 
