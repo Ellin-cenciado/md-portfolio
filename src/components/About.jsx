@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import {NavBarContext} from '../context/NavBarContext'
-import {Description} from './AboutDescription'
 
 //gets aboutClassName from NavBarContext
 //I have to remove personal-card className and start stylizing this
@@ -8,12 +7,18 @@ import {Description} from './AboutDescription'
 function About() {
     const aboutClassName = useContext(NavBarContext).aboutClassName;
     return (
-      <div className={aboutClassName}>
-        <h1 className="about-card">About Me<br/></h1>
-        <Description/>
-
-{/*         <h2 className="absolute text-forest-100 top-82 left-50 text-xl font-semibold opacity-75">Frontend developer</h2>
- */}      </div>
+      <div className={'w-screen ' +aboutClassName}>
+        <div className='relative m-10 top-[20vh] max-w-[60vh]'>
+          <h1 className="relative text-5xl font-bold text-forest-200">About Me<br/></h1>
+          <p className="relative text-forest-500 font-bold">
+          I am a Computer Science student at FaMAF. My passion for technology and
+          continuous learning drives me to immerse myself in new technologies. I
+          am excited about the opportunity to connect with individuals passionate
+          about programming and ready to contribute my enthusiasm and skills to
+          any challenging project that arises.
+          </p>
+        </div>
+      </div>
     );
   }
   

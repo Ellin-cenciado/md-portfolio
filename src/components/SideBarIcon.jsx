@@ -21,7 +21,6 @@ export function SideBarIcon({ icon, text ,render}) {
     setClassList("sidebar-icon group clicked");
     setClassListText("hidden");
   }
-
   return (
     <div className={classList} onClick={HandleClick}>
       {icon}

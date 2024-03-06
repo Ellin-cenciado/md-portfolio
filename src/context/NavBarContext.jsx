@@ -10,45 +10,33 @@ export function NavBarContextProvider(props) {
   //being rendered on
 
   const [currentPage, setCurrentPage] = useState("home");
-  const [homeClassName, setHomeClassName] = useState(
-    "flex items-center h-screen w-screen select-none"
-  );
-  const [aboutClassName, setAboutClassName] = useState(
-    "flex items-center h-screen w-screen select-none hidden"
-  );
-  const [examplesClassName, setExamplesClassName] = useState(
-    "flex items-center h-screen w-screen select-none hidden"
-  );
+  const [homeClassName, setHomeClassName] = useState("relative");
+  const [aboutClassName, setAboutClassName] = useState("hidden");
+  const [examplesClassName, setExamplesClassName] = useState("hidden");
 
   //adds or removes the 'hidden tag depending on which page u r in'
 
   function UpdatePage(page) {
     //Hides all pages before showing the selected one
-    setHomeClassName("flex items-center h-screen w-screen select-none hidden");
-    setAboutClassName("flex items-center h-screen w-screen select-none hidden");
-    setExamplesClassName(
-      "flex items-center h-screen w-screen select-none hidden"
-    );
+    setHomeClassName("hidden");
+    setAboutClassName("hidden");
+    setExamplesClassName("hidden");
 
     setCurrentPage(page);
     switch (page) {
       case "home":
         console.log("Switched to home!!");
-
-        setHomeClassName("flex items-center h-screen w-screen select-none");
-
+        setHomeClassName("relative"); //Deletes hidden className
         break;
+
       case "about":
         console.log("Switched to about!!");
-
-        setAboutClassName("flex items-center h-screen w-screen select-none ");
+        setAboutClassName("relative");
         break;
-      case "examples":
+      
+        case "examples":
         console.log("Switched to examples!!");
-
-        setExamplesClassName(
-          "flex items-center h-screen w-screen select-none "
-        );
+        setExamplesClassName("relative");
         break;
     }
   }

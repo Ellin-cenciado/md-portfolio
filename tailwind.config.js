@@ -1,18 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   mode: "jit",
-  purge: ["./src/**/*.{js,jsx}", "./public/index.html"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       borderRadius:{
         '4xl':'3rem'
-      },
-      spacing:{
-          '81':'324px',
-          '65':'258px',
-          '50': '198px',
-          '82':'332px',
       },
       colors: {
         forest: {
