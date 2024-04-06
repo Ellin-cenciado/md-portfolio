@@ -17,11 +17,11 @@ html {
 }
 @keyframes fadeInAnimation {
   0% {
-    opacity: 0;
-    left: -1rem;
+    opacity: 0; /* To fix: homepage gets broken when loading the first time */
+    left: -1vw;
   }
   100% {
-    left: 0rem;
+    left: 0vw;
   }
 }
 @keyframes nav-bar-animation-mobile {
@@ -40,31 +40,20 @@ html {
   animation-fill-mode: forwards;
 }
 
-.personal-card {
-  animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-.about-card {
-  animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-.examples-card {
-  animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
 .example-card-wrapper{
   align-items: center;
  }
 .page-wrapper{
+  animation: cubic-bezier(0.16, 1, 0.3, 1) 2s;
   position:relative;
   width: 90vw;
-  right: -10vw;
+  left: 10vw;
+}
+.sidebar-tooltip{
+  animation: none;
 }
 
-@media screen and (aspect-ratio < 1/1) {
+@media screen and (aspect-ratio < 1) {
 
   *{
     animation: fadeInAnimation cubic-bezier(0.16, 1, 0.3, 1) 2s;

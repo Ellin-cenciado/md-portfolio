@@ -9,10 +9,10 @@ export function NavBarContextProvider(props) {
   //Sets current page to home, it works by addind the 'hidden' class to every page but the page currently
   //being rendered on
 
-  const [currentPage, setCurrentPage] = useState("home");
-  const [homeClassName, setHomeClassName] = useState("relative");
+  const [currentPage, setCurrentPage] = useState("examples");
+  const [homeClassName, setHomeClassName] = useState("hidden");
   const [aboutClassName, setAboutClassName] = useState("hidden");
-  const [examplesClassName, setExamplesClassName] = useState("hidden");
+  const [examplesClassName, setExamplesClassName] = useState("relative");
 
   //adds or removes the 'hidden tag depending on which page u r in'
 
