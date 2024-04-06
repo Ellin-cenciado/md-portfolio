@@ -11,7 +11,8 @@ function Examples() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        //This is going to have repercussions..
+        const res = await fetch("https://api.github.com/users/ellin-cenciado/repos");
         const data = await res.json();
         setData(data);
       } catch (error) {
@@ -21,6 +22,8 @@ function Examples() {
     fetchData();
   }, []);
 
+
+
   return (
     <div className={"flex flex-col relative items-center " + examplesClassName}>
       <h1 className="font-bold text-5xl text-forest-200 m-10">Examples</h1>
@@ -28,9 +31,9 @@ function Examples() {
         {data.map((example, index) => (
           <ExampleCard
             key={index}
-            cardTitle={example.title}
+            cardTitle={example.name}
             cardDescription={example.description}
-            
+            handleClick = {example.html_url}
           />
         ))}
       </div>
