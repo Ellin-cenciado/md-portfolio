@@ -31,7 +31,7 @@ html {
   }
   100% {
     opacity: 1;
-    top: 75vh;
+    top: 80dvh;
   }
 }
 .navBar {
@@ -115,7 +115,7 @@ html {
 }
 @layer components {
   .navBar {
-    @apply fixed top-0 left-0 h-screen w-[10%] m-0 flex flex-col justify-evenly bg-forest-500
+    @apply fixed top-0 left-0 h-[100dvh] w-[10%] m-0 flex flex-col justify-evenly bg-forest-500
     text-white rounded-r-3xl shadow-md;
   }
   .sidebar-icon {
