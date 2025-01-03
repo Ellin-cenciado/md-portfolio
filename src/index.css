@@ -61,7 +61,7 @@ html {
   }
   .navBar {
     animation: nav-bar-animation-mobile cubic-bezier(0.16, 1, 0.3, 1) 1s;
-    @apply fixed flex flex-row items-center transition-all top-[75vh] rounded-t-3xl h-[20vh] w-screen justify-evenly;
+    @apply fixed flex flex-row items-center transition-all top-[80dvh] rounded-b-none rounded-t-3xl h-[20dvh] w-screen justify-evenly;
   }
   .page-wrapper{
     display:flex;
